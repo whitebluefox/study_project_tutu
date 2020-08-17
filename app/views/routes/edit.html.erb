@@ -1,4 +1,4 @@
-<h1>Edit Route</h1>
+<h1>Редактирование маршрута</h1>
 
 <%= form_for(@route) do |f| %>
   <% if @route.errors.any? %>
@@ -19,8 +19,8 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Edit"%>
+    <%= f.submit "Редактировать"%>
   </div>
 <% end %>
 
-<%= link_to 'Back', routes_path %>
+<%= link_to 'Назад', routes_path %>
