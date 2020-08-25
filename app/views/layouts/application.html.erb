@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render 'layouts/header' %>
     <title>Tutu</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,5 +12,6 @@
 
   <body>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
