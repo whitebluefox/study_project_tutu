@@ -6,6 +6,18 @@
     <%= f.text_field :number %>
   </div>
 
+  <div class="field">
+    <%= f.label :wagon_type, "Тип вагона" %>
+    <%= f.select :wagon_type, Wagon.wagon_types.keys.to_a %>
+  </div>
+
+  <div class="field">
+    <%= f.label :train, "Поезд" %>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit "#{@wagon.new_record? ? 'Создать' : 'Редактировать'}" %>
   </div>

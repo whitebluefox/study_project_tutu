@@ -4,6 +4,33 @@
   <strong>Номер поезда:</strong>
   <%= @train.number %>
 </p>
+<p>
+	<strong>Вагоны поезда:</strong>
+	<% if @train.wagons.present? %>
+		<p>Купейных вагонов</p>
+		<%= @train.wagons.compartment.count %>
+		<p>Плацкартных вагонов</p>
+		<%= @train.wagons.econom.count %>
+	<% else %>
+		У этого поезда ещё нет вагонов
+	<% end %>		
+</p>
+<p>
+	<strong>Маршрут:</strong>
+	<% if @train.route.present? %>
+		<%= @train.route.title %>
+	<% else %>
+		Маршрут не назначен
+	<% end %>		
+</p>
+<p>
+	<strong>На станции:</strong>
+	<% if @train.current_station.present? %>
+		<%= @train.current_station.title %>
+	<% else %>
+		Не указано
+	<% end %>		
+</p>
 
 <%= link_to 'Редактировать', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>

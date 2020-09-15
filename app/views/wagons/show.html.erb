@@ -5,5 +5,19 @@
   <%= @wagon.number %>
 </p>
 
+<p>
+  <strong>Тип:</strong>
+  <%= @wagon.wagon_type %>
+</p>
+
+<p>
+  <strong>Поезд:</strong>
+  <% if @wagon.train.present? %>
+		<%= @wagon.train.number %>
+  <% else %>
+		Поезд не назначен
+  <% end %>	
+</p>
+
 <%= link_to 'Редактировать', edit_wagon_path(@wagon) %> |
 <%= link_to 'Назад', wagons_path %>
