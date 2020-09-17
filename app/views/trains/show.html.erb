@@ -9,8 +9,28 @@
 	<% if @train.wagons.present? %>
 		<p>Купейных вагонов</p>
 		<%= @train.wagons.compartment.count %>
+			<p>Мест верхних:</p>
+				<% top_count = @train.wagons.compartment.map do |wagon| %>
+				  <% wagon.top_seat.to_i %>
+				<% end %> 
+			<%= top_count.sum %> 
+			<p>Мест нижних:</p>
+				<% bottom_count = @train.wagons.compartment.map do |wagon| %>
+				  <% wagon.bottom_seat.to_i %>
+				<% end %> 
+			<%= bottom_count.sum %>  
 		<p>Плацкартных вагонов</p>
 		<%= @train.wagons.econom.count %>
+			<p>Мест верхних:</p>
+				<% top_count = @train.wagons.econom.map do |wagon| %>
+				  <% wagon.top_seat.to_i %>
+				<% end %> 
+			<%= top_count.sum %> 
+			<p>Мест нижних:</p>
+				<% bottom_count = @train.wagons.econom.map do |wagon| %>
+				  <% wagon.bottom_seat.to_i %>
+				<% end %> 
+			<%= bottom_count.sum %> 		
 	<% else %>
 		У этого поезда ещё нет вагонов
 	<% end %>		

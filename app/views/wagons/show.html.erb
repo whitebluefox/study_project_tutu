@@ -11,6 +11,16 @@
 </p>
 
 <p>
+  <strong>Мест верхних:</strong>
+  <%= @wagon.top_seat %>
+</p>
+
+<p>
+  <strong>Мест нижних:</strong>
+  <%= @wagon.bottom_seat %>
+</p>
+
+<p>
   <strong>Поезд:</strong>
   <% if @wagon.train.present? %>
 		<%= @wagon.train.number %>
