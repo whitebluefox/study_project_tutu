@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Routes</h1>
+<h1>Маршруты</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Номер</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
         <td><%= route.title %></td>
         <td><%= link_to 'Показать', route %></td>
         <td><%= link_to 'Редактировать', edit_route_path(route) %></td>
-        <td><%= link_to 'Удалить', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Удалить', route, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'Новый Route', new_route_path %>
+<%= link_to 'Новый маршрут', new_route_path %>
+<%= link_to 'Назад', welcome_index_path %>
